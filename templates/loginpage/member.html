@@ -1,0 +1,17 @@
+<p> this is the customer page!</p>
+
+{% extends "rent.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Membership Catalogue</h1>
+    {% for car in cars.all %}
+            <p> {{ car.Model }} </p>
+            <p> {{ car.Class }} </p>
+    {% endfor %}
+    
+
+</div>
+
+{% endblock %}
