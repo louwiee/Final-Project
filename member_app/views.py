@@ -40,9 +40,9 @@ def login_acc(request):
             
             login(request, form.user)
             
-            return redirect("rental_app")
+            return redirect("home")
 
-    return render(request, 'loginpage/login.html', {'form':form})
+    return render(request, 'rent.html', {'form':form})
 
 
 def logout_acc(request):
