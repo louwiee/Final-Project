@@ -6,6 +6,7 @@ from member_app.models import MemberProfile
 from .forms import LoginForm, SignUpForm
 
 # Create your views here.
+
 def home(request):
     return render(request, 'rent.html')
 
@@ -39,13 +40,27 @@ def login_acc(request):
         if form.is_valid():
             
             login(request, form.user)
-            
-            return redirect("home")
 
-    return render(request, 'rent.html', {'form':form})
+            
+
+            return redirect("home")
+        
+
+    return render(request, 'loginpage/login.html', {'form':form})
 
 
 def logout_acc(request):
     logout(request)
     return redirect('logout')
+
+
+def profile_page(request,pk):
+    
+    #get user's movie rents
+    user = request.user
+    profile = MemberProfile.objects.get(user=user)
+    
+
+    return render(request, 'member_app/member.html', {'profile':profile})
+
 
