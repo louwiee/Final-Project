@@ -1,4 +1,4 @@
-{% extends 'rent.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <div class="container">
     <div class="row my-5">
@@ -7,9 +7,15 @@
                     <form method="POST">
                         {% csrf_token %}
                         {{form}}
+                       
+                        
                         <button class="btn btn-primary " type="submit"> Login </button>
             </form>
             </div>
+
+            <a href="signup">
+                <button class="btn btn-primary " type="submit" href="signup"> Signup </button>
+              </a>
     </div>
 </div>
 {% endblock %}
