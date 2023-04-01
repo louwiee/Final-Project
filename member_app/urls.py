@@ -4,7 +4,7 @@ from .views import signup_acc, login_acc, logout_acc, home
 
 urlpatterns = [
     
-    path('signup/', signup_acc, name='signup'),
+    path('login/signup/', signup_acc, name='signup'),
     path('login/', login_acc, name='login'),
     path('logout/', logout_acc, name='logout'),
     
